@@ -1,0 +1,219 @@
+/***
+    The new CSS reset - version 1.7.2 (last updated 23.6.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  -moz-appearance: revert;
+       appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::-moz-placeholder {
+  color: unset;
+}
+:-ms-input-placeholder {
+  color: unset;
+}
+::placeholder {
+  color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+
+.header {
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  gap: 10rem;
+  padding: 0.9375rem;
+}
+.header ul {
+  display: flex;
+  gap: 0.9375rem;
+}
+
+body {
+  font-family: "Open Sans Regular", sans-serif;
+}
+
+.pageone {
+  background-image: url(../img/bg1.png);
+  background-size: cover;
+}
+
+.pagetwo {
+  background-image: url(../img/bg2.png);
+  background-size: cover;
+}
+
+.pagethree {
+  background-size: cover;
+  background-image: url(../img/bg3.png);
+}
+
+.pagefour {
+  background-size: cover;
+  background-image: url(../img/bg4.png);
+}
+
+.pagefive {
+  background-size: cover;
+  background-image: url(../img/bg5.png);
+}
+
+.pagesix {
+  background-size: cover;
+  background-image: url(../img/bg6.png);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+.content .main__block {
+  max-width: 38.125rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.125rem;
+  height: 100%;
+  color: #fff;
+}
+.content .main__block .block__title__page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+}
+.content .main__block .block__title__page .create__web {
+  color: #5272ff;
+}
+.content .main__block .block__title__page .sub__title {
+  font-size: 1.25rem;
+}
+.content .main__block .title {
+  letter-spacing: 7px;
+  font-size: 1.875rem;
+  font-weight: 500;
+}
+.content .main__block .button {
+  display: flex;
+  gap: 1.875rem;
+}
+.content .main__block .button .btn {
+  border: 0.0625rem #5272ff solid;
+  padding: 0.625rem 2rem;
+}
+
+@font-face {
+  font-family: "Open Sans Regular";
+  src: url("../fonts/OpenSans-Regular.eot");
+  src: url("../fonts/OpenSans-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans Light";
+  src: url("../fonts/OpenSans-Light.eot");
+  src: url("../fonts/OpenSans-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans-Light.woff") format("woff"), url("../fonts/OpenSans-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+.blocker {
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.55) !important;
+}
+
+.header__block {
+  display: flex;
+  justify-content: center;
+}
+
+.anchors ul li a.active::after {
+  position: absolute;
+  bottom: 0px;
+  left: 10%;
+  width: 80%;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.6);
+  content: "";
+}/*# sourceMappingURL=style.css.map */

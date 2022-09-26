@@ -1,0 +1,119 @@
+// Обнуление стилей
+@import "null/mixins";
+@import "null/reset";
+// Шапка сайта
+@import "../components/header/header";
+
+body {
+    font-family: "Open Sans Regular", sans-serif;
+}
+.pageone {
+    background-image: url(../img/bg1.png);
+    background-size: cover;
+}
+
+.pagetwo {
+    background-image: url(../img/bg2.png);
+    background-size: cover;
+}
+.pagethree {
+    background-size: cover;
+    background-image: url(../img/bg3.png);
+}
+.pagefour {
+    background-size: cover;
+    background-image: url(../img/bg4.png);
+}
+.pagefive {
+    background-size: cover;
+    background-image: url(../img/bg5.png);
+}
+.pagesix {
+    background-size: cover;
+    background-image: url(../img/bg6.png);
+}
+
+// КОНТЕНТ САЙТА
+.content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    .main__block {
+        max-width: rem(610);
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: rem(50);
+        height: 100%;
+        color: #fff;
+        .block__title__page {
+            display: flex;
+            flex-direction: column;
+            gap: rem(30);
+            .create__web {
+                color: #5272ff;
+            }
+            .sub__title {
+                font-size: rem(20);
+            }
+        }
+        .title {
+            letter-spacing: 7px;
+            font-size: rem(30);
+            font-weight: 500;
+        }
+
+        .button {
+            display: flex;
+            gap: rem(30);
+            .btn {
+                border: rem(1) #5272ff solid;
+                padding: rem(10) rem(32);
+            }
+        }
+    }
+}
+
+@font-face {
+    font-family: "Open Sans Regular";
+    src: url("../fonts/OpenSans-Regular.eot");
+    src: url("../fonts/OpenSans-Regular.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Open Sans Light";
+    src: url("../fonts/OpenSans-Light.eot");
+    src: url("../fonts/OpenSans-Light.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/OpenSans-Light.woff") format("woff"), url("../fonts/OpenSans-Light.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+.blocker {
+    backdrop-filter: blur(3px);
+    background-color: rgba(0, 0, 0, 0.55) !important;
+}
+
+.header__block {
+    display: flex;
+    justify-content: center;
+}
+
+.anchors ul li a.active::after {
+    position: absolute;
+    bottom: 0px;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.6);
+    content: "";
+}
